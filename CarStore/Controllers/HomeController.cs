@@ -20,7 +20,7 @@ namespace CarStore.Controllers
 
         }
 
-        public async Task<IActionResult> Index()
+        public ActionResult Index()
         {
             //var user = await _userManager.FindByEmailAsync(User.Identity?.Name);
             //HttpContext.Session.SetString("FirstName", user.FirstName);

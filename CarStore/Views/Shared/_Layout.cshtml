@@ -13,8 +13,8 @@
     <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
 </head>
-<body ng-app="app">
-    <header>
+<body ng-app="app" ng-controller="productCtrl" ng-init="checkUserCookie();getProductList();getCategories()">
+@*    <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bgColorInfo border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand ms-sm-5 fs-5" asp-area="" asp-controller="Home" asp-action="Index">
@@ -34,7 +34,8 @@
                 </div>
             </div>
         </nav>
-    </header>
+    </header>*@
+    @Html.PartialAsync("~/Views/Shared/_LayoutHeader.cshtml")
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
