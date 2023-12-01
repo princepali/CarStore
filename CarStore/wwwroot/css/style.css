@@ -1,0 +1,378 @@
+﻿/*Footer*/
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+}
+/*background color form navbar*/
+.bgColorInfo {
+    background-color: #cff4fc;
+}
+/*Menu Index Page*/
+.menuButton {
+    /*    linear-gradient(45deg, #9d9dff, #7ee9ff)*/
+    background: linear-gradient(to right, #7ee9ff 0%, #9d9dff 100%);
+    width: 100%;
+}
+
+/*Dropdown*/
+.dropbtn {
+    color: white;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #cff4fc;
+            color: black;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*adjusting table alignments*/
+.table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/*css for AzurePlanFiles alignments*/
+.form-inline {
+    display: inline-flex;
+    justify-content: end;
+}
+
+.azurePlanReportFilePanel {
+    border: 1px solid;
+    border-style:solid;
+}
+
+a {
+    text-decoration: none;
+}
+/*Dropdown*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    left:auto;
+    right:0;
+    width:max-content;
+}
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        text-decoration: none;
+        display: block;
+    }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    border:1px solid;
+}
+/*table overflow prevent*/
+table {
+    overflow-wrap: break-word;
+    table-layout: fixed;
+}
+/*media queries for mobile*/
+@media only screen and (min-width: 400px) (max-width: 600px) {
+    th {
+        font-size: 2vw;
+    }
+} 
+/*Pagination alignment css*/
+.paginationset > ul {
+    justify-content: center;
+}
+
+    .paginationset > ul > li {
+        padding: 5px;
+        padding-inline: 12px;
+        border: solid 1px;
+        border-color: lightgray;
+    }
+
+.paginationset child li :active {
+    background: black;
+    color: white;
+}
+
+.pagination > li.active {
+    color: white;
+    font-weight: 600;
+    background-color: #357ebd;
+}
+
+    .pagination > li.active > a {
+        color: white;
+        pointer-events: none;
+    }
+
+.pagination > li > a {
+    color: #357ebd;
+}
+
+/*cursorFilter form usermanagement clear filter*/
+.cursorFilter {
+    cursor: pointer;
+}
+/*usermanagement filter searchbar*/
+input {
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+/*User management*/
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+/*side navbar for mobilescreen*/
+.indexHighlight {
+    z-index: 9999;
+}
+
+.right {
+    right: 0 !important;
+    left: 0 !important;
+}
+.zindexLayout{
+    z-index:101;
+}
+/*@media only screen and (max-width: 576px) {
+    .navbar-collapse {
+        background-color: #cff4fc;
+        position: fixed;
+        top: 0px;
+        transition: all 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        height: 100vh;
+        width: 65%;
+        left: 700px;
+        z-index: 100;
+        margin-left:auto;
+    }
+    .navbar-inverse .navbar-nav > li > a {
+        color: #000;
+    }
+}*/
+/*Modal width increase*/
+@media screen and (min-width: 676px) {
+    .modal-dialog {
+        max-width: 600px; /* New width for default modal */
+    }
+}
+/*Responsive table content big screen*/
+.countryColumn, .marginColumn {
+    width: 7%
+}
+.resellerSettingTable tr td {
+    font-size: 0.9rem;
+}
+.resellerSettingTable thead{
+    font-size:0.9rem !important;
+}
+.settingTable tr td {
+    font-size: 0.8rem;
+}
+
+.settingTable thead {
+    font-size: 0.8rem !important;
+}
+.countrySettingTable tr td {
+    font-size: 0.8rem;
+}
+.countrySettingTable thead {
+    font-size: 0.8rem !important;
+}
+
+.reconFileTable tr td {
+    font-size: 0.8rem;
+}
+
+.reconFileTable thead {
+    font-size: 0.8rem !important;
+}
+.invoiceTypeColumn{
+    width:14%;
+}
+.yearColumn {
+    width: 5% !important;
+}
+.platFormColumn {
+    width: 7% !important;
+}
+.uploadColumn {
+    width: 11% !important;
+}
+/*css for reportfile status animation loader*/
+
+.font-13 {
+font-size: 13px !important;
+}
+
+.font-15 {
+font-size: 15px !important;
+}
+.badge-active {
+    background: linear-gradient(to right, #93ed39, #27821d);
+    color: #ffffff;
+}
+
+.badge-completed {
+    color: #fff;
+    background: linear-gradient(to right, #39a8ed, #0378ad);
+}
+
+.badge-pending {
+    color: #fff;
+    background: linear-gradient(to right, #34cdeb, #34ebdb);
+}
+.badge-failed{
+    color: #fff;
+    background: linear-gradient(to right, #ffd500, #ff4000);
+}
+
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-weight: 700;
+    line-height: .75;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+.penaltySettingTable tr td {
+    font-size: 0.8rem;
+}
+
+.penaltySettingTable thead {
+    font-size: 0.8rem !important;
+}
+.penaltySettingTable .countryColumn {
+    width: 7%;
+}
+.penaltySettingTable .platFormColumn {
+    width: 14% !important;
+}
+.penaltySettingTable .resellerIdColumn {
+    width: 13% !important;
+}
+.penaltySettingTable .penaltyPCTColumn {
+    width: 9% !important;
+}
+.penaltySettingTable .penaltyUSDColumn {
+    width: 9%;
+}
+.penaltySettingTable .lastUpdatedColumn {
+    width: 12%;
+}
+.penaltySettingTable .lastUpdatedByColumn {
+    width: 13%;
+}
+.penaltySettingTable .actionColumn {
+    width: 10%;
+}
+[ng-cloak]
+{
+    display:none !important;
+}
+button{
+    border-color:transparent;
+}
+
+.resellerTableColumnsAlignMobileView:nth-child(odd) {
+    background: #cff4fc !important;
+}
+.borderBottomLineReportFiles{
+    border-bottom-style:hidden !important;
+}
+/*Eliminate blank dropdown row*/
+/*select > option:first-child {
+    display: none;
+}*/
+.azurePlanInvoiceTypeDropdown option:first-child {
+    display: none !important;
+}
+.subcriptionsSettingTable .countryColumn {
+    width: 8%;
+}
+.subcriptionsSettingTable .platFormColumn {
+    width: 12% !important;
+}
+.subcriptionsSettingTable .subcriptionIdColumn {
+    width: 14% !important;
+}
+.subcriptionsSettingTable .resellerNameColumn {
+    width: 12% !important;
+}
+.subcriptionsSettingTable .streamOneSOColumn {
+    width: 12% !important;
+}
+.subcriptionsSettingTable .lastUpdatedByColumn {
+    width: 11% !important;
+}
+.marginSettingTable .platFormColumn{
+    width:12% !important;
+}
+.marginSettingTable .countryColumn {
+    width: 8% !important;
+}
+
+.form-check .form-check-input {
+height:1.75em !important;
+width:4em !important;
+}
+
+.form-check-input:checked {
+    background-color: #34cdeb;
+    border-color: #0378ad;
+    border-width:0.2em
+}
+/* Increase the checkbox size at upload recon page by scaling */
+.checkBoxSize {
+    transform: scale(2.0);
+}
+.azureDetailPageButtons {
+    background-color: #76dcff;
+}
+.card-title{
+    white-space:nowrap;
+}
+.card-text{
+    margin-left:12px;
+}

@@ -1,0 +1,98 @@
+﻿@inject IConfiguration _config
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BillingApplication: @ViewData["Title"] </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="icon" type="image/x-icon" href="/Images/calculator.png">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BillingApplicationV3.styles.css" asp-append-version="true" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/daterangepicker.css" />
+</head>
+<body ng-app="app" ng-controller="globalCtrl" ng-cloak>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bgColorInfo border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-sm-5 fs-5" asp-area="" asp-controller="Home" asp-action="Index">  @_config["ProjectTitle:Name"]</a>
+                <button class="navbar-toggler zindexLayout" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark ms-sm-0 ms-4" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark ms-sm-0 ms-4" asp-area="" asp-controller="AzurePlan" asp-action="AzurePlanFiles">Report Files</a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="nav-link cursorFilter text-dark dropbtn ms-sm-0 ms-4">Settings
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="/AzurePlan/AzurePlanCountrySettings/"><i class="fa fa-flag me-1" aria-hidden="true"></i>Country</a>
+                                <a href="/AzurePlan/AzurePlanMarginSettings/"><i class="fa fa-credit-card me-1" aria-hidden="true"></i>Margin</a>
+                                <a href="/AzurePlan/AzurePlanResellerSettings/"><i class="fa fa-truck me-1" aria-hidden="true"></i>Reseller</a>
+                                <a href="/AzurePlan/AzurePlanSubscriptionSettings/"><i class="fa fa-ticket me-1" aria-hidden="true"></i>Subscription</a>
+                                <a href="/AzurePlan/AzurePlanPenaltySettings/"><i class="fa fa-ticket me-1" aria-hidden="true"></i>Penalty</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" ng-controller="azurePlanCtrl">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; <script>document.write(new Date().getFullYear())</script> - BillingApplication
+        </div>
+    </footer>
+    <script src="~/lib/angularjs/angular.min.js"></script>
+    <script src="~/js/app.js"></script>
+    <script src="~/js/controllers/globalctrl.js"></script>
+    <script src="~/js/controllers/azureplanctrl.js"></script>
+    <script src="~/js/services/azureplanservice.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/directive/customPagination.js"></script>
+    <script src="~/js/directive/loader.js"></script>
+    <script src="~/js/directive/ngenter.js"></script>
+    <script src="~/js/directive/fileInput.js"></script>
+    <script src="~/js/directive/validateFile.js"></script>
+    <script type="text/javascript" src="~/js/directive/moment.min.js"></script>
+    <script type="text/javascript" src="~/js/directive/daterangepicker.min.js"></script>
+    <script>
+        $(function () {
+            $('input[name="dateTimefilter"]').daterangepicker({
+                drops: 'down',
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear',
+                }
+            });
+
+            $('input[name="dateTimefilter"]').on('apply.daterangepicker', function (ev, picker) {
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+            $('input[name="dateTimefilter"]').on('cancel.daterangepicker', function (ev, picker) {
+                $(this).val('');
+            });
+        })
+    </script>
+    <loader></loader>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@using CarStore.Data.DbContext;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject IHttpContextAccessor HttpContextAccessor
+
+<ul class="navbar-nav me-4 position-relative">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark ms-sm-0 ms-4" title="Manage">Hello, @User.Identity?.Name </a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline ms-sm-0 ms-4" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-danger" title="Logout"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i></button>
+            </form>
+        </li>
+        @if (User.IsInRole("SuperAdmin"))
+        {
+            <li class="nav-item dropdown p-sm-2 d-none d-sm-block">
+                <a data-bs-toggle="dropdown" href="#"><i class="fa-solid fa-cog fa-spin fa-lg text-dark"></i></a>
+                <ul class="dropdown-content ps-0">
+                    <a asp-area="" asp-controller="Account" asp-action="UserManagement">User Management</a>
+                </ul>
+            </li>
+            <li class="nav-item p-2 d-sm-none">
+                <ul class="ps-0">
+                    <a class="text-dark ms-sm-0 ms-3" asp-area="" asp-controller="Account" asp-action="UserManagement" title="UserManagement"><i class="fa-solid fa-cog fa-spin fa-lg text-dark me-1"></i>User Management</a>
+                </ul>
+            </li>
+        }
+    }
+    else
+    {
+        @if(User.IsInRole("SuperAdmin"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </li>
+        }
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+    }
+</ul>

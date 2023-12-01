@@ -1,0 +1,132 @@
+﻿@page
+@using static CarStore.Helper.EnumList;
+@model RegisterModel
+@inject IConfiguration _config
+@{
+    ViewData["Title"] = "Add New User";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    // Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+<div class="container-fluid p-0 h-100">
+    <div class="row g-0 d-flex justify-content-center align-items-center h-100">
+    <!--Image section-->
+    <div class="col-lg-7 col-xl-8">
+        <div class="image">
+            <img src="~/Images/car-engine-1548434.jpg" class="fit-image img-fluid" />
+        </div>
+    </div>
+    <div class="col-lg-5 col-xl-4">
+        <div class="card-body p-md-5 mx-md-4">
+            <div class="text-center">
+                <h1 class="mt-1 mb-4 pb-1 text-dark">@_config["ProjectTitle:Name"]</h1>
+            </div>
+            <!--Register form-->
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" ng-init="getRoles()">
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.FirstName" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.FirstName"></label>
+                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.LastName" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.LastName"></label>
+                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.MobileNo" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.MobileNo"></label>
+                    <span asp-validation-for="Input.MobileNo" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <select asp-for="Input.RoleName" class="form-control form-select" aria-required="true">
+                        <option value="" disabled selected hidden>Select Role</option>
+                        @foreach (var item in Html.GetEnumSelectList<RoleType>())
+                        {
+                            <option value="@item.Text.ToString()">@item.Text.ToString()</option>
+                        }
+                    </select>
+                    <label asp-for="Input.RoleName"></label>
+                    <span asp-validation-for="Input.RoleName" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Password"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button id="registerSubmit my-2" type="submit" class="w-100 btn btn-lg btn-success">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <!--Form section-->
+    </div>
+</div>
+
+@* <h1 class="text-center">@ViewData["Title"]</h1> *@
+
+@* <div class="row justify-content-center" ng-controller="accountCtrl">
+    <div class="col-md-4 justify-content-center">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" ng-init="getRoles()">
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating my-2">
+                <input asp-for="Input.FirstName" class="form-control" autocomplete="username" aria-required="true" />
+                <label asp-for="Input.FirstName"></label>
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-floating my-2">
+                <input asp-for="Input.LastName" class="form-control" autocomplete="username" aria-required="true" />
+                <label asp-for="Input.LastName"></label>
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-floating my-2">
+                <input asp-for="Input.MobileNo" class="form-control" autocomplete="username" aria-required="true" />
+                <label asp-for="Input.MobileNo"></label>
+                <span asp-validation-for="Input.MobileNo" class="text-danger"></span>
+            </div>
+            <div class="form-floating my-2">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                <label asp-for="Input.Email"></label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating my-2">
+                <select asp-for="Input.RoleName" class="form-control form-select" aria-required="true">
+                    <option value="" disabled selected hidden>Select Role</option>
+                    @foreach (var item in Html.GetEnumSelectList<RoleType>())
+                    {
+                        <option value="@item.Text.ToString()">@item.Text.ToString()</option>
+                    }
+                </select>
+                <label asp-for="Input.RoleName"></label>
+                <span asp-validation-for="Input.RoleName" class="text-danger"></span>
+            </div>
+            <div class="form-floating my-2">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                <label asp-for="Input.Password"></label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating my-2">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                <label asp-for="Input.ConfirmPassword"></label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit my-2" type="submit" class="w-100 btn btn-lg btn-success">Sign Up</button>
+        </form>
+    </div>
+</div> *@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
