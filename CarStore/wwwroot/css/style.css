@@ -6,106 +6,6 @@
     text-align: center;
     padding: 15px;
 }
-/*background color form navbar*/
-.bgColorInfo {
-    background-color: #cff4fc;
-}
-/*Menu Index Page*/
-.menuButton {
-    /*    linear-gradient(45deg, #9d9dff, #7ee9ff)*/
-    background: linear-gradient(to right, #7ee9ff 0%, #9d9dff 100%);
-    width: 100%;
-}
-
-/*Dropdown*/
-.dropbtn {
-    color: white;
-    border: none;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-        .dropdown-content a:hover {
-            background-color: #cff4fc;
-            color: black;
-        }
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-/*adjusting table alignments*/
-.table {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-/*css for AzurePlanFiles alignments*/
-.form-inline {
-    display: inline-flex;
-    justify-content: end;
-}
-
-.azurePlanReportFilePanel {
-    border: 1px solid;
-    border-style:solid;
-}
-
-a {
-    text-decoration: none;
-}
-/*Dropdown*/
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    left:auto;
-    right:0;
-    width:max-content;
-}
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-        color: black;
-        text-decoration: none;
-        display: block;
-    }
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-    border:1px solid;
-}
-/*table overflow prevent*/
-table {
-    overflow-wrap: break-word;
-    table-layout: fixed;
-}
 /*media queries for mobile*/
 @media only screen and (min-width: 400px) (max-width: 600px) {
     th {
@@ -148,231 +48,276 @@ table {
 .cursorFilter {
     cursor: pointer;
 }
-/*usermanagement filter searchbar*/
-input {
-    width: 100%;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-/*User management*/
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none !important;
 }
-
-/*side navbar for mobilescreen*/
-.indexHighlight {
-    z-index: 9999;
+/*Car Store Products Home Page*/
+.headcontainer {
+    margin-top: -8px;
 }
 
-.right {
-    right: 0 !important;
-    left: 0 !important;
+a, u {
+    text-decoration: none;
 }
-.zindexLayout{
-    z-index:101;
+
+body, footer {
+    background-image: url("/images/bg-body.jpg");
 }
-/*@media only screen and (max-width: 576px) {
-    .navbar-collapse {
-        background-color: #cff4fc;
-        position: fixed;
-        top: 0px;
-        transition: all 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-        height: 100vh;
-        width: 65%;
-        left: 700px;
-        z-index: 100;
-        margin-left:auto;
+
+a:hover {
+    color: red !important;
+}
+
+.btn:hover {
+    background-color: black !important;
+}
+
+.border {
+    border-radius: 0px !important;
+}
+
+.bgcolor {
+    background-color: #c41c1c;
+}
+
+.bg-dark {
+    background-color: black !important;
+}
+
+.text-dark {
+    color: black !important;
+    font-size: small;
+}
+
+.Homenav {
+    background-color: #c41c1c;
+}
+
+.copyrightmgn {
+    margin-top: -18px;
+}
+
+.navbartop {
+    margin-top: -9px;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.navmargin {
+    margin-bottom: -8px;
+}
+
+.border {
+    border-radius: 0px;
+}
+
+.carouselmidtext {
+    color: #ff8400;
+    font-family: 'Niconne', cursive;
+}
+
+.greetingtxt {
+    font-size: 22px;
+    color: #c41c1c;
+}
+
+h1, .Seatcover {
+    position: absolute;
+    left: 60%;
+    top: 20%;
+}
+
+h3 {
+    position: absolute;
+    left: 60%;
+    top: 38%;
+}
+
+h4 {
+    position: absolute;
+    left: 60%;
+    top: 50%;
+}
+/* Mobiles */
+@media all and (max-width:767px) {
+    h3 {
+        font-size: 10px;
     }
-    .navbar-inverse .navbar-nav > li > a {
-        color: #000;
-    }
-}*/
-/*Modal width increase*/
-@media screen and (min-width: 676px) {
-    .modal-dialog {
-        max-width: 600px; /* New width for default modal */
+
+    h1, .Seatcover {
+        font-size: 16px;
     }
 }
-/*Responsive table content big screen*/
-.countryColumn, .marginColumn {
-    width: 7%
+
+@media all and (min-width:768px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    h1, .Seatcover {
+        font-size: 25px;
+    }
 }
-.resellerSettingTable tr td {
-    font-size: 0.9rem;
-}
-.resellerSettingTable thead{
-    font-size:0.9rem !important;
-}
-.settingTable tr td {
-    font-size: 0.8rem;
+/* Desktop */
+@media all and (min-width:997px) {
+    h4 {
+        font-size: 50px;
+    }
+
+    h1, .Seatcover {
+        font-size: 50px;
+    }
+
+    h3 {
+        font-size: 23px;
+    }
 }
 
-.settingTable thead {
-    font-size: 0.8rem !important;
-}
-.countrySettingTable tr td {
-    font-size: 0.8rem;
-}
-.countrySettingTable thead {
-    font-size: 0.8rem !important;
+@media all and (min-width:1300px) {
+    h4 {
+        font-size: 60px;
+    }
+
+    h1, .Seatcover {
+        font-size: 55px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
 }
 
-.reconFileTable tr td {
-    font-size: 0.8rem;
+.wheels, .Seatcover {
+    font-family: 'Shrikhand', cursive;
 }
 
-.reconFileTable thead {
-    font-size: 0.8rem !important;
-}
-.invoiceTypeColumn{
-    width:14%;
-}
-.yearColumn {
-    width: 5% !important;
-}
-.platFormColumn {
-    width: 7% !important;
-}
-.uploadColumn {
-    width: 11% !important;
-}
-/*css for reportfile status animation loader*/
-
-.font-13 {
-font-size: 13px !important;
+.titlecart {
+    font-family: 'Shrikhand', cursive;
 }
 
-.font-15 {
-font-size: 15px !important;
-}
-.badge-active {
-    background: linear-gradient(to right, #93ed39, #27821d);
-    color: #ffffff;
+.searchbar {
+    margin-bottom: 1px !important;
 }
 
-.badge-completed {
-    color: #fff;
-    background: linear-gradient(to right, #39a8ed, #0378ad);
-}
-
-.badge-pending {
-    color: #fff;
-    background: linear-gradient(to right, #34cdeb, #34ebdb);
-}
-.badge-failed{
-    color: #fff;
-    background: linear-gradient(to right, #ffd500, #ff4000);
-}
-
-
-.badge {
-    display: inline-block;
-    padding: .25em .4em;
-    font-weight: 700;
-    line-height: .75;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-}
-.penaltySettingTable tr td {
-    font-size: 0.8rem;
-}
-
-.penaltySettingTable thead {
-    font-size: 0.8rem !important;
-}
-.penaltySettingTable .countryColumn {
-    width: 7%;
-}
-.penaltySettingTable .platFormColumn {
-    width: 14% !important;
-}
-.penaltySettingTable .resellerIdColumn {
-    width: 13% !important;
-}
-.penaltySettingTable .penaltyPCTColumn {
-    width: 9% !important;
-}
-.penaltySettingTable .penaltyUSDColumn {
-    width: 9%;
-}
-.penaltySettingTable .lastUpdatedColumn {
-    width: 12%;
-}
-.penaltySettingTable .lastUpdatedByColumn {
-    width: 13%;
-}
-.penaltySettingTable .actionColumn {
-    width: 10%;
-}
-[ng-cloak]
-{
-    display:none !important;
-}
-button{
-    border-color:transparent;
-}
-
-.resellerTableColumnsAlignMobileView:nth-child(odd) {
-    background: #cff4fc !important;
-}
-.borderBottomLineReportFiles{
-    border-bottom-style:hidden !important;
-}
-/*Eliminate blank dropdown row*/
-/*select > option:first-child {
+.change_image {
     display: none;
-}*/
-.azurePlanInvoiceTypeDropdown option:first-child {
-    display: none !important;
-}
-.subcriptionsSettingTable .countryColumn {
-    width: 8%;
-}
-.subcriptionsSettingTable .platFormColumn {
-    width: 12% !important;
-}
-.subcriptionsSettingTable .subcriptionIdColumn {
-    width: 14% !important;
-}
-.subcriptionsSettingTable .resellerNameColumn {
-    width: 12% !important;
-}
-.subcriptionsSettingTable .streamOneSOColumn {
-    width: 12% !important;
-}
-.subcriptionsSettingTable .lastUpdatedByColumn {
-    width: 11% !important;
-}
-.marginSettingTable .platFormColumn{
-    width:12% !important;
-}
-.marginSettingTable .countryColumn {
-    width: 8% !important;
 }
 
-.form-check .form-check-input {
-height:1.75em !important;
-width:4em !important;
+.img:hover .change_image {
+    display: block;
 }
 
-.form-check-input:checked {
-    background-color: #34cdeb;
-    border-color: #0378ad;
-    border-width:0.2em
+.img:hover .old_image {
+    display: none;
 }
-/* Increase the checkbox size at upload recon page by scaling */
-.checkBoxSize {
-    transform: scale(2.0);
+
+@media all and (max-width:767px) {
+    strong {
+        font-size: 12px;
+    }
+
+    .pdpproductbtn {
+        font-size: 12px;
+    }
 }
-.azureDetailPageButtons {
-    background-color: #76dcff;
+
+.overflowitem {
+    white-space: nowrap;
+    overflow: hidden;
 }
-.card-title{
-    white-space:nowrap;
+
+@media screen and (min-width: 768px) and (max-width:992px) {
+    .newproductbtn {
+        font-size: 12px;
+    }
 }
-.card-text{
-    margin-left:12px;
+
+@media screen and (min-width: 992px) and (max-width:1200px) {
+    .pdpproductbtn {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:1200px) {
+    .carouselpdpcartbtn {
+        font-size: 12px;
+    }
+}
+/*Login Register button and welcome greeting msg on mobile*/
+@media screen and (max-width: 767px) {
+    .Myaccountdesk {
+        font-size: 7px;
+    }
+
+    .greetingtxt {
+        font-size: 14px;
+        color: #c41c1c;
+    }
+
+    .carouselpdpcartbtn {
+        font-size: 8px;
+    }
+}
+/*Featured menuitem on Index Page*/
+.featuredtitle {
+    margin-bottom: -25px;
+}
+
+::placeholder {
+    color: lightslategrey !important;
+}
+/*Pdp Carousel Indicator*/
+.indicat_width {
+    width: 50px !important;
+}
+/*Login and Registration title heading */
+.Accounttitle {
+    font-size: 2em;
+}
+/*Basket table font-face Size on Mobile*/
+@media screen and (max-width: 767px) {
+    .baskettbl {
+        font-size: 8px;
+    }
+}
+
+.Categoryproductborder {
+    border-bottom: 1px solid black;
+}
+
+    .Categoryproductborder:last-child {
+        border-bottom: none;
+    }
+
+.redtext {
+    color: #c41c1c;
+}
+
+.wishlisticon {
+    position: absolute;
+    right: 6%;
+}
+/*Wishlist Icon Size on mobile and tablets*/
+@media screen and (min-width: 330px) and (max-width:768px) {
+    .wishlisticon {
+        font-size: 24px;
+    }
+}
+/*Wishlist Icon Size on Desktop and Large Screen*/
+@media screen and (min-width: 1200px) {
+    .wishlisticon {
+        font-size: 22px;
+    }
+}
+
+.wishlisticonhover .wishlisticon {
+    visibility: hidden;
+}
+
+.wishlisticonhover:hover .wishlisticon {
+    visibility: visible;
+}
+
+input {
+    border-radius: 0px !important;
 }

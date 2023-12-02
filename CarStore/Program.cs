@@ -1,5 +1,11 @@
+using AutoMapper;
 using CarStore.Data;
 using CarStore.Data.DbContext;
+using CarStore.Data.Repositories.Dapper;
+using CarStore.Data.Repositories.LogRepository;
+using CarStore.Data.Repositories.ProductsRepositories;
+using CarStore.Profiler;
+using CarStore.Services.ProductServices;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +25,19 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+//for Mapping data from Entity to Model
+builder.Services.AddAutoMapper(typeof(MapperProfiler).Assembly);
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new MapperProfiler());
+});
+IMapper mapper = mapperConfig.CreateMapper();
+
+builder.Services.AddScoped<IDapperRepository, DapperRepository>();
+builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
+builder.Services.AddScoped<ILogRepository, LogRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.Configure<DataProtectionTokenProviderOptions>(opts => opts.TokenLifespan = TimeSpan.FromMinutes(20));
 

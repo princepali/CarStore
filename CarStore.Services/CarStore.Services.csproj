@@ -8,7 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarStore.Data\CarStore.Data.csproj" />
+    <ProjectReference Include="..\CarStore.Entities\CarStore.Entities.csproj" />
   </ItemGroup>
 
 </Project>

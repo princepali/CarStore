@@ -1,8 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_CarStoreLayout.cshtml";
 }
     <div class="mt-2">
-        @Html.Partial("~/Views/Shared/_LayoutHeader.cshtml")
         <!-- Header ends -->
         <!-- Carousel -->
         <div class="row bg-white border">
@@ -184,14 +184,14 @@
                             </div>
                             <div class="border-bottom px-3">
                                 <!-- Product Title1 -->
-                                <div class="row Categoryproductborder" ng-repeat="producth in dataList | limitTo:3">
+                                <div class="row Categoryproductborder" ng-repeat="producth in products | limitTo:3">
                                     <div class="col-8 col-md-8 my-auto align-self-center overflowitem">
-                                        <h6 ng-bind="producth.ProductName"></h6>
-                                        <strong class="redtext fw-bold" ng-bind="'$'+ producth.Price"></strong>
+                                        <h6 ng-bind="producth.productName"></h6>
+                                        <strong class="redtext fw-bold" ng-bind="'$'+ producth.price"></strong>
                                     </div>
                                     <!-- Product Image1 -->
                                     <div class="col-4 col-md-4">
-                                        <img class="img-fluid align-self-center my-auto" ng-src="{{producth.Image}}">
+                                    <img class="img-fluid align-self-center my-auto" ng-src="{{producth.image}}">
                                     </div>
                                 </div>
                             </div>
@@ -208,18 +208,18 @@
                         <p class="border border-dark bg-dark text-light text-xl-start p-2">Featured Products English 1</p>
                     </div>
                     <!-- Featured Products Images -->
-                    <div class="col-6 col-md-6  col-lg-3 my-2" ng-repeat="product in dataList | limitTo:4:8">
+                <div class="col-6 col-md-6  col-lg-3 my-2" ng-repeat="product in products | limitTo:4:8">
                         <div class="border border-dark">
-                            <img class="img-fluid" ng-src="{{product.Image}}"
+                            <img class="img-fluid" ng-src="{{product.image}}"
                                  alt="image cap">
                             <div class="text-center overflowitem mb-3">
-                                <h6 class="fw-bold" ng-bind="product.ProductName"></h6>
+                                <h6 class="fw-bold" ng-bind="product.productName"></h6>
                                 <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                 <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                 <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                 <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                 <i class="fa fa-star-half-o text-warning" aria-hidden="true"></i>
-                                <p class="redtext fw-bold" ng-bind="'$'+ product.Price+'.00'"></p>
+                                <p class="redtext fw-bold" ng-bind="'$'+ product.price+'.00'"></p>
                                 <button href="#" class="border btn bgcolor text-white">+ ADD TO CART</button>
                             </div>
                         </div>
@@ -232,19 +232,19 @@
                         <p class="border border-dark bg-dark text-light text-xl-start p-2 mt-3">New Products</p>
                     </div>
                     <!-- New Products images -->
-                    <div class="col-6 col-md-4 col-lg-3 my-3 img" ng-repeat="producth in dataList | limitTo:12">
+                <div class="col-6 col-md-4 col-lg-3 my-3 img" ng-repeat="producth in products | limitTo:12">
                         <div class="border border-dark">
-                            <img class="img-fluid old_image" ng-src="{{producth.Image}}"
+                            <img class="img-fluid old_image" ng-src="{{producth.image}}"
                                  alt="image cap">
-                            <img class="img-fluid change_image" ng-src="{{producth.HoverImage}}" alt="image cap" />
+                            <img class="img-fluid change_image" ng-src="{{producth.hoverImage}}" alt="image cap" />
                             <div class="text-center overflowitem mb-3">
-                                <h6 class="fw-bold" ng-bind="producth.ProductName"></h6>
+                                <h6 class="fw-bold" ng-bind="producth.productName"></h6>
                                 <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                 <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                 <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                 <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                 <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                                <p class="redtext fw-bold" ng-bind="'$'+ producth.Price+'.00'"></p>
+                                <p class="redtext fw-bold" ng-bind="'$'+ producth.price+'.00'"></p>
                                 <button href="#" class="border newproductbtn btn bgcolor text-white">+ ADD TO CART</button>
                             </div>
                         </div>

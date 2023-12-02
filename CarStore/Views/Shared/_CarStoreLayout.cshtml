@@ -4,18 +4,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BillingApplication: @ViewData["Title"] </title>
+    <title>CarStore: @ViewData["Title"] </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="icon" type="image/x-icon" href="/Images/calculator.png">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BillingApplicationV3.styles.css" asp-append-version="true" />
     <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="~/css/daterangepicker.css" />
 </head>
-<body ng-app="app" ng-controller="globalCtrl" ng-cloak>
-    <header>
+<body ng-app="app" ng-cloak>
+@*    <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bgColorInfo border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand ms-sm-5 fs-5" asp-area="" asp-controller="Home" asp-action="Index">  @_config["ProjectTitle:Name"]</a>
@@ -48,9 +47,10 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <div class="container" ng-controller="azurePlanCtrl">
+    </header>*@
+    <div class="container" ng-controller="productCtrl" ng-init="getProducts()">
         <main role="main" class="pb-3">
+            @Html.Partial("~/Views/Shared/_LayoutHeader.cshtml")
             @RenderBody()
         </main>
     </div>
@@ -62,8 +62,8 @@
     <script src="~/lib/angularjs/angular.min.js"></script>
     <script src="~/js/app.js"></script>
     <script src="~/js/controllers/globalctrl.js"></script>
-    <script src="~/js/controllers/azureplanctrl.js"></script>
-    <script src="~/js/services/azureplanservice.js"></script>
+    <script src="~/js/controllers/productCtrl.js"></script>
+    <script src="~/js/services/productService.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/directive/customPagination.js"></script>
